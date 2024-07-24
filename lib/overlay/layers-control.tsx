@@ -4,41 +4,67 @@ import { RiEyeCloseLine, RiEyeLine } from "@remixicon/react";
 import { Button, Card, List, ListItem, Title } from "@tremor/react";
 import { cx } from "../utils";
 import { useMapStore } from "../store/store";
-import { Layer, LayerId } from "../store/types";
+import { Layer, LayerId, LayerStyles } from "../store/types";
+import { layerStyles } from "../store/layers";
 
 export function LayersControl() {
   const { layers } = useMapStore();
 
   return (
-    <Card className="text-tremor-default col-start-1 row-auto m-8 h-fit w-96 grid-flow-row grid-flow-col rounded-lg bg-neutral-100 p-4 text-neutral-800 shadow-xl">
-      <Title className="text-tremor-title font-medium">Layer</Title>
+    <Card>
+      <Title>Map Layers</Title>
       <List className="flex-start flex flex-col gap-2">
         {Object.entries(layers)?.map(([id, layer]) => {
-          return <LayerControl layer={layer} id={id} key={id} />;
+          return (
+            <LayerControl
+              key={id}
+              id={id}
+              layer={layer}
+              styles={layerStyles[id as LayerId]}
+            />
+          );
         })}
       </List>
     </Card>
   );
 }
 
-function LayerControl({ layer, id }: { id: string; layer: Layer }) {
+function LayerControl({
+  id,
+  styles,
+  layer,
+}: {
+  id: string;
+  styles: LayerStyles;
+  layer: Layer;
+}) {
   const { toggleLayerVisibility } = useMapStore();
+
+  let keyStyles: string;
+  if (styles.raster) {
+    keyStyles = cx(
+      `bg-[${styles.raster["raster-color"]}]`,
+      `bg-opacity-20`,
+      `border-[${styles.raster["raster-color"]}]`,
+      "h-4 w-4"
+    );
+  } else {
+    keyStyles = cx(
+      `bg-[${styles.fill?.["fill-color"]}]`,
+      `bg-opacity-20`,
+      `border-[${styles.line?.["line-color"]}]`,
+      "h-4 w-4"
+    );
+  }
 
   return (
     <ListItem className="flex justify-start gap-4">
-      <div
-        className={cx(
-          `bg-[${layer.style?.fill["fill-color"]}]`,
-          `bg-opacity-20`,
-          // `border-2`,
-          `border-[${layer.style?.line["line-color"]}]`,
-          "h-4 w-4"
-        )}
-      ></div>
+      <div className={keyStyles}></div>
       <label htmlFor={id}>{layer.title}</label>
       <Button
         icon={layer.visible ? RiEyeCloseLine : RiEyeLine}
         size="xs"
+        variant="light"
         className="flex flex-grow justify-end"
         onClick={() => toggleLayerVisibility(id as LayerId)}
       />

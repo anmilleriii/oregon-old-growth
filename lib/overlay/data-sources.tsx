@@ -1,4 +1,4 @@
-import { List, ListItem, Title } from "@tremor/react";
+import { Card, List, ListItem, Title } from "@tremor/react";
 
 const dataSources = [
   {
@@ -23,7 +23,7 @@ const dataSources = [
 
 export function DataSources() {
   return (
-    <>
+    <Card>
       <Title>Data Sources</Title>
       <List>
         {dataSources.map((source, index) => (
@@ -33,6 +33,6 @@ export function DataSources() {
           </ListItem>
         ))}
       </List>
-    </>
+    </Card>
   );
 }

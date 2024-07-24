@@ -4,10 +4,15 @@ export type LayerId =
   | "private-land"
   | "state-boundary";
 
+export type LayerStyles = {
+  fill?: mapboxgl.FillPaint;
+  line?: mapboxgl.LinePaint;
+  raster?: mapboxgl.RasterPaint;
+};
+
 export type Layer = {
   title: string;
   visible: boolean;
-  style: { fill: any; line: any };
 };
 
 export type Layers = Record<LayerId, Layer>;

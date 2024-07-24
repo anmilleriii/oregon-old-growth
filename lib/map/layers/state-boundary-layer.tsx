@@ -1,27 +1,19 @@
-"use client";
-
 import { Layer, Source } from "react-map-gl";
-import { useMapStore } from "../../store/store";
 import { stateBoundaryGeojson } from "./state-boundary-data";
+import { layerStyles } from "@/lib/store/layers";
 
 export function StateBoundaryLayer() {
-  const { layers } = useMapStore();
-
   return (
     <Source id="state-boundary" type="geojson" data={stateBoundaryGeojson}>
       <Layer
         id="state-boundary-fill"
         type="fill"
-        paint={{
-          ...layers["state-boundary"].style.fill,
-        }}
+        paint={layerStyles["state-boundary"].fill}
       />
       <Layer
         id="state-boundary-outline"
         type="line"
-        paint={{
-          ...layers["state-boundary"].style.line,
-        }}
+        paint={layerStyles["state-boundary"].line}
       />
     </Source>
   );

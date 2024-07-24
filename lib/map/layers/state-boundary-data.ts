@@ -1,6 +1,7 @@
-export const stateBoundaryGeojson = {
+import { FeatureCollection } from "geojson";
+
+export const stateBoundaryGeojson: FeatureCollection = {
   type: "FeatureCollection",
-  name: "testb",
   features: [
     {
       type: "Feature",

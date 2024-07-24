@@ -6,9 +6,9 @@ import { useRef } from "react";
 import { Map, MapRef, NavigationControl, ScaleControl } from "react-map-gl";
 import { mapConfig } from "./map/config";
 import { stateBoundaryGeojson } from "./map/layers/state-boundary-data";
-import { Overlay } from "./overlay";
+import { Overlay } from "./overlay/overlay";
 import { MapProvider } from "./store/store";
-import { Layers } from "./layers";
+import { Layers } from "./map/layers/layers";
 
 export function OregonOldGrowth() {
   const mapRef = useRef<MapRef | null>(null);

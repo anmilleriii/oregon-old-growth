@@ -3,6 +3,8 @@ import {
   AccordionBody,
   AccordionHeader,
   AccordionList,
+  Card,
+  Title,
 } from "@tremor/react";
 
 const questions = [
@@ -40,20 +42,14 @@ const questions = [
 
 export function FAQ() {
   return (
-    <AccordionList className="text-tremor-default my-2 auto-rows-auto text-left shadow-transparent bg-neutral-100">
+    <AccordionList className="*:bg-neutral-100">
       {questions.map((question) => (
-        <Accordion
-          key={question.question}
-          className="border-none text-left [&>button]:p-0 bg-neutral-100"
-        >
-          <AccordionHeader
-            key={question.question}
-            className="text-left font-semibold text-blue-800"
-          >
+        <Accordion key={question.question}>
+          <AccordionHeader key={question.question} className="text-left">
             {question.question}
           </AccordionHeader>
-          <AccordionBody className="text-tremor-default text-left [&>button]:p-0">
-            <p className="">{question.answer}</p>
+          <AccordionBody>
+            <p>{question.answer}</p>
           </AccordionBody>
         </Accordion>
       ))}

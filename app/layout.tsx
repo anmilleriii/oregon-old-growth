@@ -14,12 +14,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html
-      className="w-screen font-normal !text-neutral-800 antialiased"
-      lang="en"
-    >
+    <html className="text-neutral-800 antialiased *:bg-neutral-100 " lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <body className="">
+      <body>
         {children}
         <Analytics />
       </body>
