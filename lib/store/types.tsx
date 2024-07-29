@@ -1,3 +1,9 @@
+import {
+  FillLayerSpecification,
+  LineLayerSpecification,
+  RasterLayerSpecification,
+} from "mapbox-gl";
+
 export type LayerId =
   | "at-risk-old-growth"
   | "old-growth"
@@ -5,9 +11,9 @@ export type LayerId =
   | "state-boundary";
 
 export type LayerStyles = {
-  fill?: mapboxgl.FillPaint;
-  line?: mapboxgl.LinePaint;
-  raster?: mapboxgl.RasterPaint;
+  fill?: FillLayerSpecification["paint"];
+  line?: LineLayerSpecification["paint"];
+  raster?: RasterLayerSpecification["paint"];
 };
 
 export type Layer = {

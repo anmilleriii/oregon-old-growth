@@ -51,3 +51,10 @@ Less important
 - [x] Historic/planned timber harvests on USFS land in Oregon
 
 <!--  -->
+
+
+# Todo
+
+- Finish writeup with findings (4 hours)
+- Finish QGIS GNN to LSOG raster
+- 

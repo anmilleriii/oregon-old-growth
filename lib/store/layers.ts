@@ -22,39 +22,39 @@ export const layers: Layers = {
 export const layerStyles: Record<LayerId, LayerStyles> = {
   "at-risk-old-growth": {
     fill: {
-      "fill-color": "#E11D48", // red pixels
+      "fill-color": "#dc2626", // red-600
       "fill-opacity": 0.8,
     },
     line: {
-      "line-color": "#E11D48",
+      "line-color": "#dc2626",
       "line-opacity": 0.9,
       "line-width": 2,
     },
   },
   "old-growth": {
     raster: {
-      "raster-opacity": 0.8,
+      "raster-opacity": 0.9, // teal-700 #0f766e
     },
   },
   "private-land": {
     fill: {
-      "fill-color": "#E11D48", //
+      "fill-color": "#fcd34d", // amber-300
       "fill-opacity": 0.8,
     },
     line: {
-      "line-color": "#E11D48",
+      "line-color": "#fcd34d",
       "line-opacity": 0.9,
       "line-width": 2,
     },
   },
   "state-boundary": {
     fill: {
-      "fill-color": "#E11D48",
-      "fill-opacity": 0.8,
+      "fill-color": "#d4d4d4", // neutral-300
+      "fill-opacity": 0.05,
     },
     line: {
-      "line-color": "#E11D48",
-      "line-opacity": 0.9,
+      "line-color": "#d4d4d4",
+      "line-opacity": 0.6,
       "line-width": 2,
     },
   },

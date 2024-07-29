@@ -13,6 +13,12 @@ export function InfoPanel() {
         timber harvest data from USFS [2] to highlight which Old Growth Forests
         are most at-risk of being logged.
       </Text>
+      <Text>Click on a pixel to see who owns the plot.</Text>
+      <Title>Disclaimers</Title>
+      <Text>
+        This information is provided as-is. All data is publically available. No
+        gurantee of accurracy is implied.
+      </Text>
       <Text>
         A project by{" "}
         <a

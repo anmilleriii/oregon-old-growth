@@ -24,6 +24,12 @@ const questions = [
       "The same attributes which make old growth forest so naturally rich contribute to efficient and significant quantities of timber.",
   },
   {
+    question:
+      "How do private and public lands differ in terms of old growth conservation?",
+    answer:
+      "There are a number of protections that regulate how public lands can use their land. In Oregon, some of the pertinent regulations include the Northwest Forest Plan. In general, private lands are more likely to be. Only 40% of land in Oregon is private, but 90% of logging occurs on private lands [3].",
+  },
+  {
     question: "How accurrate is this data?",
     answer:
       "The Old Growth data is taken from Geo [1] and timber harvest data from USFS [2]. This map is only as accurrate as these sources. Note that not all old growth in Oregon is mapped here.",
