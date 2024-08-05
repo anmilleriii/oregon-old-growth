@@ -11,9 +11,9 @@ export function LayersControl() {
   const { layers } = useMapStore();
 
   return (
-    <Card>
-      <Title>Map Layers</Title>
-      <List className="flex-start flex flex-col gap-2">
+    <Card className="leading-loose flex flex-col gap-2 ">
+      <Title className="text-neutral-600 font-semibold">Layers</Title>
+      <List className="">
         {Object.entries(layers)?.map(([id, layer]) => {
           return (
             <LayerControl
@@ -58,11 +58,12 @@ function LayerControl({
   }
 
   return (
-    <ListItem className="flex justify-start gap-4">
+    <ListItem className="flex justify-start ">
       <div className={keyStyles}></div>
       <label htmlFor={id}>{layer.title}</label>
       <Button
         icon={layer.visible ? RiEyeLine : RiEyeCloseLine}
+        color="neutral"
         size="xs"
         variant="light"
         className="flex flex-grow justify-end"
