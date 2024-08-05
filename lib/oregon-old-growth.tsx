@@ -15,7 +15,10 @@ export function OregonOldGrowth() {
 
   return (
     <MapProvider>
-      <div className="h-screen w-screen font-sans">
+      <div className="lg:hidden text-center text-lg p-10">
+        This map is intended for desktop only presently.
+      </div>
+      <div className="h-screen w-screen font-sans hidden lg:block">
         <Overlay />
         <Map
           ref={mapRef}
