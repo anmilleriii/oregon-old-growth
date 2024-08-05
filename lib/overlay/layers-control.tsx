@@ -12,7 +12,7 @@ export function LayersControl() {
 
   return (
     <Card className="leading-loose flex flex-col gap-2 ">
-      <Title className="text-neutral-600 font-semibold">Layers</Title>
+      <Title className="text-neutral-600 font-semibold">Data</Title>
       <List className="">
         {Object.entries(layers)?.map(([id, layer]) => {
           return (
@@ -29,6 +29,16 @@ export function LayersControl() {
   );
 }
 
+// TODO share styles
+const STYLE = {
+  "at-risk-old-growth": "bg-[#dc2626] bg-opacity-80",
+  "old-growth": "bg-[#0f766e] bg-opacity-80",
+  "private-land":
+    "bg-[#fcd34d] bg-opacity-80 border-[#fcd34d] border-2 border-opacity-90",
+  "state-boundary":
+    "bg-[#d4d4d4] bg-opacity-5 border-[#d4d4d4] border-2 border-opacity-60",
+};
+
 function LayerControl({
   id,
   styles,
@@ -39,27 +49,11 @@ function LayerControl({
   layer: Layer;
 }) {
   const { toggleLayerVisibility } = useMapStore();
-
-  let keyStyles: string;
-  if (styles.raster) {
-    keyStyles = cx(
-      `bg-[${styles.raster["raster-color"]}]`,
-      `bg-opacity-20`,
-      `border-[${styles.raster["raster-color"]}]`,
-      "h-4 w-4"
-    );
-  } else {
-    keyStyles = cx(
-      `bg-[${styles.fill?.["fill-color"]}]`,
-      `bg-opacity-20`,
-      `border-[${styles.line?.["line-color"]}]`,
-      "h-4 w-4"
-    );
-  }
+  const keyStyles = STYLE[id as LayerId];
 
   return (
-    <ListItem className="flex justify-start ">
-      <div className={keyStyles}></div>
+    <ListItem className="flex justify-start gap-2">
+      <div className={cx(keyStyles, "h-4 w-4")}></div>
       <label htmlFor={id}>{layer.title}</label>
       <Button
         icon={layer.visible ? RiEyeLine : RiEyeCloseLine}

@@ -2,19 +2,19 @@ import { LayerId, Layers, LayerStyles } from "./types";
 
 export const layers: Layers = {
   "at-risk-old-growth": {
-    title: "At Risk Old Growth (Old Growth located on Private Land)",
+    title: "At Risk Old Growth (Old Growth located on Private Land in 2012)",
     visible: true,
   },
   "old-growth": {
-    title: "Old Growth",
+    title: "Old Growth (2012)",
     visible: true,
   },
   "private-land": {
-    title: "Private Land",
+    title: "Private Land (2024)",
     visible: true,
   },
   "state-boundary": {
-    title: "Oregon State Boundary",
+    title: "Oregon State Boundary (2024)",
     visible: true,
   },
 };

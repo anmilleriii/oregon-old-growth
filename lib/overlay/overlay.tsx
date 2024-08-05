@@ -11,8 +11,8 @@ export function Overlay() {
       style={{ fontFamily: "sans-serif" }}
     >
       <Info />
-      <Methodology />
       <LayersControl />
+      <Methodology />
       <Disclaimers />
       <AdditionalResources />
     </div>

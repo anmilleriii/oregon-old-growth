@@ -12,7 +12,7 @@ export function Disclaimers() {
         from publically available data. This map should not be considered as
         authoritative but rather as a starting point for further understanding.
         Among other limitations:
-        <List className="py-2 italic *:py-1">
+        <List className="py-2 pl-2 *:py-1">
           <ListItem>Map resolution is at 30 meters or greater.</ListItem>
           <ListItem>Private land classification may be adjusted</ListItem>
           <ListItem>
