@@ -62,7 +62,7 @@ function LayerControl({
       <div className={keyStyles}></div>
       <label htmlFor={id}>{layer.title}</label>
       <Button
-        icon={layer.visible ? RiEyeCloseLine : RiEyeLine}
+        icon={layer.visible ? RiEyeLine : RiEyeCloseLine}
         size="xs"
         variant="light"
         className="flex flex-grow justify-end"

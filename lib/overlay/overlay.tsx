@@ -1,9 +1,5 @@
 import { InfoPanel } from "./info-panel";
-import { LastUpdatedBanner } from "./last-updated-banner";
 import { LayersControl } from "./layers-control";
-import { DataSources } from "./data-sources";
-import { FAQ } from "./faq";
-import { KeyFacts } from "./key-facts";
 
 export function Overlay() {
   return (
@@ -12,11 +8,7 @@ export function Overlay() {
       style={{ fontFamily: "sans-serif" }}
     >
       <InfoPanel />
-      <FAQ />
       <LayersControl />
-      <DataSources />
-      <KeyFacts />
-      <LastUpdatedBanner />
     </div>
   );
 }
