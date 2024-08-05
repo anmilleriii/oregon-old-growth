@@ -54,6 +54,19 @@ export function AdditionalResources() {
               all purposes including wildfire.
             </Text>
           </ListItem>
+          <ListItem>
+            <Text>
+              <a
+                href="https://www.lucascometto.com/cascadia-oregon"
+                className="underline font-bold"
+              >
+                Wilderness Photographer Lucas Cometto
+              </a>{" "}
+              has beautifully captured some of Oregons most famous old growth
+              forests, including Arcadia Cedar Grove, Valley of the Giants, and
+              more.
+            </Text>
+          </ListItem>
         </List>
       </Text>
     </Card>
