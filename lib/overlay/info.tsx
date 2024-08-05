@@ -1,5 +1,5 @@
-import { Card, Icon, Text, Title } from "@tremor/react";
 import { RiExternalLinkLine } from "@remixicon/react";
+import { Card, Icon, Text, Title } from "@tremor/react";
 
 export function Info() {
   return (

@@ -1,6 +1,6 @@
+import { useMapStore } from "../../store";
 import { PrivateLandLayer } from "./private-land-layer";
 import { StateBoundaryLayer } from "./state-boundary-layer";
-import { useMapStore } from "../../store";
 
 export function Layers() {
   const { layers } = useMapStore();

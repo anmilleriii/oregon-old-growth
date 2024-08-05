@@ -5,10 +5,10 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { useRef } from "react";
 import { Map, MapRef, NavigationControl, ScaleControl } from "react-map-gl";
 import { mapConfig } from "./map/config";
+import { Layers } from "./map/layers/layers";
 import { stateBoundaryGeojson } from "./map/layers/state-boundary-data";
 import { Overlay } from "./overlay/overlay";
 import { MapProvider } from "./store/store";
-import { Layers } from "./map/layers/layers";
 
 export function OregonOldGrowth() {
   const mapRef = useRef<MapRef | null>(null);
@@ -23,8 +23,10 @@ export function OregonOldGrowth() {
         <Map
           ref={mapRef}
           onLoad={(event) => {
+            // @ts-expect-error
             mapRef.current = event.target;
             const bounds = turf.bbox(stateBoundaryGeojson);
+            // @ts-expect-error
             mapRef.current.fitBounds(bounds, {
               offset: [230, 0],
               padding: 150,

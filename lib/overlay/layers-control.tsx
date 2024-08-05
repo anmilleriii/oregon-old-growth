@@ -2,10 +2,10 @@
 
 import { RiEyeCloseLine, RiEyeLine } from "@remixicon/react";
 import { Button, Card, List, ListItem, Title } from "@tremor/react";
-import { cx } from "../utils";
+import { layerStyles } from "../store/layers";
 import { useMapStore } from "../store/store";
 import { Layer, LayerId, LayerStyles } from "../store/types";
-import { layerStyles } from "../store/layers";
+import { cx } from "../utils";
 
 export function LayersControl() {
   const { layers } = useMapStore();

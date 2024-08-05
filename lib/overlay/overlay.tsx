@@ -1,8 +1,8 @@
-import { Info } from "./info";
-import { Methodology } from "./methodology";
-import { LayersControl } from "./layers-control";
-import { Disclaimers } from "./disclaimers";
 import { AdditionalResources } from "./additional-resources";
+import { Disclaimers } from "./disclaimers";
+import { Info } from "./info";
+import { LayersControl } from "./layers-control";
+import { Methodology } from "./methodology";
 
 export function Overlay() {
   return (
