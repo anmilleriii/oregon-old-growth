@@ -29,8 +29,9 @@ export function OregonOldGrowth() {
             const bounds = turf.bbox(stateBoundaryGeojson);
             // @ts-expect-error
             mapRef.current.fitBounds(bounds, {
-              offset: [230, 0],
+              offset: [180, 0],
               padding: 150,
+              duration: 1600,
             });
             setIsLoaded(true);
           }}
