@@ -18,10 +18,13 @@ export function Info() {
         >
           Oregon Wild
         </a>
-        ). Of the remaining Old Growth, about 630,000 hectares (18%) are located
-        on private land. Due to more stringent state and federal regulations for
+        ). <br />
+        <br />
+        Of our remaining Old Growth, about 630,000 hectares (18%) are located on
+        private land. Due to more stringent state and federal regulations for
         Old Growth on public lands, forests located on private lands are at
         greater risk of harvest.
+        <br />
         <br />
         This map shows Old Growth in Oregon compared with private land,
         highlighting where the most At-Risk Old Growth exists in Oregon. While

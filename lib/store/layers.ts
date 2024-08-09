@@ -36,8 +36,8 @@ export const layerStyles: Record<LayerId, LayerStyles> = {
   },
   "state-boundary": {
     fill: {
-      "fill-color": "#d4d4d4", // neutral-300
-      "fill-opacity": 0.05,
+      "fill-color": "white", // neutral-100
+      "fill-opacity": 1,
     },
     line: {
       "line-color": "#d4d4d4",

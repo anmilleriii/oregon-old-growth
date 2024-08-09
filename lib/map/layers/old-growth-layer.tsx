@@ -1,6 +1,7 @@
 import { Layer, Source } from "react-map-gl";
 
 import { layerStyles } from "@/lib/store/layers";
+import { mapConfig } from "../config";
 
 const TILESET_ID = "anmiller314.46cfk8np";
 
@@ -11,9 +12,9 @@ export function OldGrowthLayer() {
       id="old-growth"
       type="raster"
       tiles={[
-        `https://api.mapbox.com/v4/${TILESET_ID}/{zoom}/{x}/{y}{@2x}.{format}`,
+        `https://api.mapbox.com/v4/anmiller314.46cfk8np/{z}/{x}/{y}.webp?access_token=${mapConfig.accessToken}`,
       ]}
-      // tileSize={256}
+      tileSize={256}
     >
       <Layer
         id="old-growth-fill"

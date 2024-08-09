@@ -2,7 +2,7 @@
 
 import * as turf from "@turf/turf";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Map, MapRef, NavigationControl, ScaleControl } from "react-map-gl";
 import { mapConfig } from "./map/config";
 import { Layers } from "./map/layers/layers";
@@ -12,6 +12,7 @@ import { MapProvider } from "./store/store";
 
 export function OregonOldGrowth() {
   const mapRef = useRef<MapRef | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <MapProvider>
@@ -31,6 +32,7 @@ export function OregonOldGrowth() {
               offset: [230, 0],
               padding: 150,
             });
+            setIsLoaded(true);
           }}
           style={{
             width: "100vw",
@@ -52,7 +54,7 @@ export function OregonOldGrowth() {
               backgroundColor: "#f5f5f5",
             }}
           />
-          <Layers />
+          {isLoaded && <Layers />}
         </Map>
       </div>
     </MapProvider>

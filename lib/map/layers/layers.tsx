@@ -7,7 +7,7 @@ export function Layers() {
 
   return (
     <>
-      {/* {layers["old-growth"].visible && <OldGrowthLayer />} */}
+      {layers["old-growth"].visible && <OldGrowthLayer />}
       {layers["state-boundary"].visible && <StateBoundaryLayer />}
     </>
   );
