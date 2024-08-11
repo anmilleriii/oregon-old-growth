@@ -31,12 +31,12 @@ export const layerStyles: Record<LayerId, LayerStyles> = {
   },
   "old-growth": {
     raster: {
-      "raster-opacity": 0.9, // teal-700 #0f766e
+      "raster-opacity": 1, // teal-700 #0f766e
     },
   },
   "state-boundary": {
     fill: {
-      "fill-color": "white", // neutral-100
+      "fill-color": "#d4d4d4", // neutral-100
       "fill-opacity": 1,
     },
     line: {
