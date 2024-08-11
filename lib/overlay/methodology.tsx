@@ -21,14 +21,14 @@ export function Methodology() {
           <Text>
             <strong>Old Growth</strong> data is from the Landscape Ecology,
             Modeling, Mapping & Analysis (LEMMA) group at Oregon State
-            University. LEMMA provided a
+            University. LEMMA provided a{" "}
             <a
               href="https://lemma.forestry.oregonstate.edu/data/structure-maps"
               target="_blank"
               className="underline"
             >
               2012 Gradient Nearest Neighbor (GNN) structure plot
-            </a>
+            </a>{" "}
             with comprehensive forest information on the West Coast. From this
             data, the Old Growth raster tiles were created by a reclassification
             of the raster by pixels with the Late Successional Old Growth (LSOG)
@@ -38,7 +38,7 @@ export function Methodology() {
         </ListItem>
         <ListItem>
           <Text>
-            <strong>Private Land data</strong> is derived from the
+            <strong>Private Land data</strong> is derived from the{" "}
             <a
               href="https://gis.blm.gov/orarcgis/rest/services/Land_Status/BLM_OR_Ownership/MapServer"
               target="_blank"

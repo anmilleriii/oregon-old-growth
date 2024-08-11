@@ -2,7 +2,7 @@
 
 import * as turf from "@turf/turf";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Map, MapRef, NavigationControl, ScaleControl } from "react-map-gl";
 import { mapConfig } from "./map/config";
 import { Layers } from "./map/layers/layers";
@@ -12,13 +12,14 @@ import { MapProvider } from "./store/store";
 
 export function OregonOldGrowth() {
   const mapRef = useRef<MapRef | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <MapProvider>
-      <div className="lg:hidden text-center text-lg p-10">
+      <div className="md:hidden text-center text-lg p-10">
         This map is intended for desktop only presently.
       </div>
-      <div className="h-screen w-screen font-sans hidden lg:block">
+      <div className="h-screen w-screen font-sans hidden md:block">
         <Overlay />
         <Map
           ref={mapRef}
@@ -28,9 +29,11 @@ export function OregonOldGrowth() {
             const bounds = turf.bbox(stateBoundaryGeojson);
             // @ts-expect-error
             mapRef.current.fitBounds(bounds, {
-              offset: [230, 0],
+              offset: [180, 0],
               padding: 150,
+              duration: 1600,
             });
+            setIsLoaded(true);
           }}
           style={{
             width: "100vw",
@@ -52,7 +55,7 @@ export function OregonOldGrowth() {
               backgroundColor: "#f5f5f5",
             }}
           />
-          <Layers />
+          {isLoaded && <Layers />}
         </Map>
       </div>
     </MapProvider>

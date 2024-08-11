@@ -4,14 +4,12 @@ export const layers: Layers = {
   "at-risk-old-growth": {
     title: "At Risk Old Growth (Old Growth located on Private Land in 2012)",
     visible: true,
+    disableToggleVisibility: true,
   },
   "old-growth": {
     title: "Old Growth (2012)",
     visible: true,
-  },
-  "private-land": {
-    title: "Private Land (2024)",
-    visible: true,
+    disableToggleVisibility: true,
   },
   "state-boundary": {
     title: "Oregon State Boundary (2024)",
@@ -33,24 +31,13 @@ export const layerStyles: Record<LayerId, LayerStyles> = {
   },
   "old-growth": {
     raster: {
-      "raster-opacity": 0.9, // teal-700 #0f766e
-    },
-  },
-  "private-land": {
-    fill: {
-      "fill-color": "#fcd34d", // amber-300
-      "fill-opacity": 0.8,
-    },
-    line: {
-      "line-color": "#fcd34d",
-      "line-opacity": 0.9,
-      "line-width": 2,
+      "raster-opacity": 1, // teal-700 #0f766e
     },
   },
   "state-boundary": {
     fill: {
-      "fill-color": "#d4d4d4", // neutral-300
-      "fill-opacity": 0.05,
+      "fill-color": "#d4d4d4", // neutral-100
+      "fill-opacity": 1,
     },
     line: {
       "line-color": "#d4d4d4",

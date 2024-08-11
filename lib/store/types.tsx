@@ -4,11 +4,7 @@ import {
   RasterLayerSpecification,
 } from "mapbox-gl";
 
-export type LayerId =
-  | "at-risk-old-growth"
-  | "old-growth"
-  | "private-land"
-  | "state-boundary";
+export type LayerId = "at-risk-old-growth" | "old-growth" | "state-boundary";
 
 export type LayerStyles = {
   fill?: FillLayerSpecification["paint"];
@@ -19,6 +15,7 @@ export type LayerStyles = {
 export type Layer = {
   title: string;
   visible: boolean;
+  disableToggleVisibility?: boolean;
 };
 
 export type Layers = Record<LayerId, Layer>;

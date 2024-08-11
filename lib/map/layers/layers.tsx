@@ -1,5 +1,5 @@
 import { useMapStore } from "../../store";
-import { PrivateLandLayer } from "./private-land-layer";
+import { OldGrowthLayer } from "./old-growth-layer";
 import { StateBoundaryLayer } from "./state-boundary-layer";
 
 export function Layers() {
@@ -7,9 +7,7 @@ export function Layers() {
 
   return (
     <>
-      {/* {layers["at-risk-old-growth"].visible && <PrivateLandLayer />} */}
-      {/* {layers["old-growth"].visible && <PrivateLandLayer />} */}
-      {layers["private-land"].visible && <PrivateLandLayer />}
+      {layers["old-growth"].visible && <OldGrowthLayer />}
       {layers["state-boundary"].visible && <StateBoundaryLayer />}
     </>
   );
