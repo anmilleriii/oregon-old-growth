@@ -1,7 +1,6 @@
 "use client";
 
-import { RiEyeCloseLine, RiEyeLine } from "@remixicon/react";
-import { Button, Card, List, ListItem, Title } from "@tremor/react";
+import { Card, List, ListItem, Title } from "@tremor/react";
 import { layerStyles } from "../store/layers";
 import { useMapStore } from "../store/store";
 import { Layer, LayerId, LayerStyles } from "../store/types";
@@ -30,8 +29,8 @@ export function LayersControl() {
 }
 
 const STYLE = {
-  "at-risk-old-growth": "bg-[#dc2626] bg-opacity-80",
-  "old-growth": "bg-[#0f766e] bg-opacity-80",
+  "at-risk-old-growth": "bg-[#f23a25]",
+  "old-growth": "bg-[#49bdad]",
   "state-boundary":
     "bg-[#d4d4d4] bg-opacity-5 border-[#d4d4d4] border-2 border-opacity-60",
 };
@@ -44,23 +43,12 @@ function LayerControl({
   styles: LayerStyles;
   layer: Layer;
 }) {
-  const { toggleLayerVisibility } = useMapStore();
   const keyStyles = STYLE[id as LayerId];
 
   return (
     <ListItem className="flex justify-start gap-2">
       <div className={cx(keyStyles, "h-4 w-4")}></div>
       <label htmlFor={id}>{layer.title}</label>
-      {!layer.disableToggleVisibility && (
-        <Button
-          icon={layer.visible ? RiEyeLine : RiEyeCloseLine}
-          color="neutral"
-          size="xs"
-          variant="light"
-          className="flex flex-grow justify-end"
-          onClick={() => toggleLayerVisibility(id as LayerId)}
-        />
-      )}
     </ListItem>
   );
 }
