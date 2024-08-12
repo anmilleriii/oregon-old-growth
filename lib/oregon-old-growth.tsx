@@ -2,17 +2,28 @@
 
 import * as turf from "@turf/turf";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Map, MapRef, NavigationControl, ScaleControl } from "react-map-gl";
 import { mapConfig } from "./map/config";
-import { Layers } from "./map/layers/layers";
-import { stateBoundaryGeojson } from "./map/layers/state-boundary-data";
 import { Overlay } from "./overlay/overlay";
 import { MapProvider } from "./store/store";
+import state from "./map/data/oregon-boundary.json";
 
 export function OregonOldGrowth() {
   const mapRef = useRef<MapRef | null>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const handleClickKeyLocation = ({
+    lng,
+    lat,
+  }: {
+    lng: number;
+    lat: number;
+  }) => {
+    mapRef.current?.flyTo({
+      center: [lng, lat],
+      essential: true,
+      zoom: 10,
+    });
+  };
 
   return (
     <MapProvider>
@@ -20,20 +31,22 @@ export function OregonOldGrowth() {
         This map is intended for desktop only presently.
       </div>
       <div className="h-screen w-screen font-sans hidden md:block">
-        <Overlay />
+        <Overlay onClickKeyLocation={handleClickKeyLocation} />
         <Map
           ref={mapRef}
           onLoad={(event) => {
             // @ts-expect-error
             mapRef.current = event.target;
-            const bounds = turf.bbox(stateBoundaryGeojson);
+            // @ts-expect-error
+            const bounds = turf.bbox(state);
             // @ts-expect-error
             mapRef.current.fitBounds(bounds, {
               offset: [180, 0],
               padding: 150,
               duration: 1600,
             });
-            setIsLoaded(true);
+
+            mapRef.current?.on("click", (e) => console.log(e.lngLat));
           }}
           style={{
             width: "100vw",
@@ -55,7 +68,6 @@ export function OregonOldGrowth() {
               backgroundColor: "#f5f5f5",
             }}
           />
-          {isLoaded && <Layers />}
         </Map>
       </div>
     </MapProvider>

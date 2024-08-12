@@ -2,7 +2,7 @@ import { Card, List, ListItem, Text, Title } from "@tremor/react";
 
 export function Disclaimers() {
   return (
-    <Card className="leading-loose flex flex-col gap-2 ">
+    <Card id="disclaimers" className="leading-loose flex flex-col gap-2 ">
       <Title className="text-neutral-600 font-semibold">
         Disclaimers & Limitations
       </Title>
