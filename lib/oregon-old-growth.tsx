@@ -11,6 +11,19 @@ import state from "./map/data/oregon-boundary.json";
 
 export function OregonOldGrowth() {
   const mapRef = useRef<MapRef | null>(null);
+  const handleClickKeyLocation = ({
+    lng,
+    lat,
+  }: {
+    lng: number;
+    lat: number;
+  }) => {
+    mapRef.current?.flyTo({
+      center: [lng, lat],
+      essential: true,
+      zoom: 10,
+    });
+  };
 
   return (
     <MapProvider>
@@ -18,7 +31,7 @@ export function OregonOldGrowth() {
         This map is intended for desktop only presently.
       </div>
       <div className="h-screen w-screen font-sans hidden md:block">
-        <Overlay />
+        <Overlay onClickKeyLocation={handleClickKeyLocation} />
         <Map
           ref={mapRef}
           onLoad={(event) => {
@@ -32,6 +45,8 @@ export function OregonOldGrowth() {
               padding: 150,
               duration: 1600,
             });
+
+            mapRef.current?.on("click", (e) => console.log(e.lngLat));
           }}
           style={{
             width: "100vw",
