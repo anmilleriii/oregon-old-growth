@@ -12,7 +12,6 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   openGraph: {
-    images: "",
     title: "Monitoring At-Risk Old Growth Forests in Oregon",
     description:
       "Where are the Old Growth forests in Oregon, and where are they most at risk of timber harvest?",
