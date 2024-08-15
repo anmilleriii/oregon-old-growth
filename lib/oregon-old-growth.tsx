@@ -12,14 +12,14 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   openGraph: {
-    title: "Monitoring At-Risk Old Growth Forests in Oregon",
+    title: "Understanding At-Risk Old Growth Forests in Oregon",
     description:
       "Where are the Old Growth forests in Oregon, and where are they most at risk of timber harvest?",
     authors: "Al Miller",
     publishedTime: "2024-07-22T10:00:00Z",
   },
   metadataBase: new URL("https://oregon.anmiller.com"),
-  title: "Monitoring At-Risk Old Growth Forests in Oregon",
+  title: "Understanding At-Risk Old Growth Forests in Oregon",
   description:
     "Where are the Old Growth forests in Oregon, and where are they most at risk of timber harvest?",
 };

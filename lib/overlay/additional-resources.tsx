@@ -9,12 +9,12 @@ export function AdditionalResources() {
 
       <div>
         <Text>
-          Monitoring is crucial to preservation; patchy data on &quot;Where Old
-          Growth forests are&quot; has historically contributed to plausiable
-          deniability for the harvest of Old Growth in Oregon, as recently as in
-          2019. While Old Growth locations are not perfectly understood or
-          mapped in Oregon or across the country, there are a few adjacent
-          efforts underway;
+          Understanding is crucial to preservation; patchy data on &quot;Where
+          Old Growth forests are&quot; has historically contributed to
+          plausiable deniability for the harvest of Old Growth in Oregon, as
+          recently as in 2019. While Old Growth locations are not perfectly
+          understood or mapped in Oregon or across the country, there are a few
+          adjacent efforts underway;
         </Text>
         <List>
           <ListItem>
