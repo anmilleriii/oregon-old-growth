@@ -5,7 +5,7 @@ export function Info() {
   return (
     <Card className="leading-loose flex flex-col gap-2 ">
       <Title className="text-neutral-600 font-semibold">
-        Monitoring Oregon&apos;s Last Remaining Old Growth Forests
+        Understanding Oregon&apos;s Last Remaining Old Growth Forests
       </Title>
       <Text>
         In 2012, Oregon had approximately <strong>3,450,000</strong> hectares of
