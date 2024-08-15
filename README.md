@@ -4,7 +4,7 @@
 
 Where are the "Old Growth" forests in Oregon, and where are they most at risk of timber harvest?
 
-For futher information, see writeup at https://anmiller.com/oregon and application at https://oregon.anmiller.com.
+For futher information, see writeup at https://anmiller.com/essays/oregon-old-growth and application at https://anmiller.com/oregon.
 
 
 
