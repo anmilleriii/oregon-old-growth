@@ -1,6 +1,9 @@
 import { Card, Text, Title } from "@tremor/react";
 import Image from "next/image";
 
+// https://nextjs.org/docs/app/api-reference/next-config-js/assetPrefix
+const BASE_PATH = "/oregon";
+
 const locations = [
   {
     id: "Blue River",
@@ -40,6 +43,7 @@ export function KeyLocations({ onClick }: KeyLocationsProps) {
     }
     onClick?.(location.lngLat);
   };
+
   return (
     <Card className="leading-loose flex flex-col gap-2 ">
       <Title className="text-neutral-600 font-semibold">
@@ -63,7 +67,7 @@ export function KeyLocations({ onClick }: KeyLocationsProps) {
               <Image
                 fill
                 style={{ objectFit: "cover" }}
-                src={`/oregon/key-locations/${location.image}`}
+                src={`${BASE_PATH}/key-locations/${location.image}`}
                 alt={`Image of ${location.title}`}
               />
             </div>
