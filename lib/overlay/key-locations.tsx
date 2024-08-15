@@ -2,7 +2,7 @@ import { Card, Text, Title } from "@tremor/react";
 import Image from "next/image";
 
 // https://nextjs.org/docs/app/api-reference/next-config-js/assetPrefix
-const BASE_PATH = "/oregon";
+const BASE_PATH = "https://oregon.anmiller.com/oregon";
 
 const locations = [
   {
