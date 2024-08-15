@@ -1,5 +1,4 @@
-import { RiExternalLinkLine } from "@remixicon/react";
-import { Card, Icon, Text, Title } from "@tremor/react";
+import { Card, Text, Title } from "@tremor/react";
 import Image from "next/image";
 
 const locations = [
@@ -63,8 +62,8 @@ export function KeyLocations({ onClick }: KeyLocationsProps) {
             <div className="relative w-32 h-32">
               <Image
                 fill
-                objectFit="cover"
-                src={`/key-locations/${location.image}`}
+                style={{ objectFit: "cover" }}
+                src={`/oregon/key-locations/${location.image}`}
                 alt={`Image of ${location.title}`}
               />
             </div>
